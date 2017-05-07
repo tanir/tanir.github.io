@@ -110,7 +110,7 @@
                     </li>
                 </ul>
             </div>
-            <div style="display: none" class="col-sm-9">
+            <div class="col-sm-9">
                 <div id="carousel-banner" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
@@ -152,7 +152,7 @@
                     </a>
                 </div>
             </div>
-            <div style="display: none" class="col-sm-9">
+            <div class="col-sm-9">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-3">
@@ -324,7 +324,7 @@
                                         <div class="col-sm-8">
                                             <div class="input-group">
                                                 <span class="input-group-addon btn"><span class="glyphicon glyphicon-minus"></span> </span>
-                                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                                <input type="text" class="form-control" />
                                                 <span class="input-group-addon btn"><span class="glyphicon glyphicon-plus"></span></span>
                                             </div>
                                         </div>
@@ -337,6 +337,123 @@
                                 </form>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <div class="container-fluid cart">
+                    <h1>Моя корзина</h1>
+                    <form class="form">
+                        <div class="row">
+                            <div class="table-responsive cart-list">
+                                <table class="table table-hover order-list">
+                                    <tr>
+                                        <th>Товар</th>
+                                        <th>Наименование</th>
+                                        <th>Количество</th>
+                                        <th>Итого</th>
+                                        <th></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="http://s.fotorama.io/1.jpg" alt=""/>
+                                        </td>
+                                        <td>
+                                            Какой то товар <br/>
+                                            Цвет: <b>красный</b> <br/>
+                                            Размер: <b>300x200</b>
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <span class="input-group-addon btn"><span class="glyphicon glyphicon-minus"></span> </span>
+                                                <input type="text" class="form-control" value="11"/>
+                                                <span class="input-group-addon btn"><span class="glyphicon glyphicon-plus"></span></span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                             <b>122 <span class="fa fa-rub"></span></b>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-link btn-xs"><span class="glyphicon glyphicon-remove"></span></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="http://s.fotorama.io/1.jpg" alt=""/>
+                                        </td>
+                                        <td>
+                                            Какой то товар <br/>
+                                            Цвет: <b>красный</b> <br/>
+                                            Размер: <b>300x200</b>
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <span class="input-group-addon btn"><span class="glyphicon glyphicon-minus"></span> </span>
+                                                <input type="text" class="form-control" value="22"/>
+                                                <span class="input-group-addon btn"><span class="glyphicon glyphicon-plus"></span></span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <b>122 <span class="fa fa-rub"></span></b>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-link btn-xs"><span class="glyphicon glyphicon-remove"></span></button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row order-form">
+                            <div class="col-sm-6 customer-details">
+                                <h4>Ваши данные</h4>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" placeholder="Email"/>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" placeholder="Телефон"/>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Адрес доставки" rows="4"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Комментарий к заказу" rows="4"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <h4>Доставка</h4>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="delivery" value="option1" checked>
+                                        Самовывоз
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="delivery" value="option2">
+                                        Курьерской службой
+                                    </label>
+                                </div>
+                                <h4>Оплата</h4>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="payment" value="option1" checked>
+                                        Оплата по реквизитам
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="payment" value="option2">
+                                        При получении
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row total">
+                            <div class="text-right">
+                                <p class="total"><b>Итого: 1 245 <span class="fa fa-rub"></span></b></p>
+                                <button type="submit" class="btn btn-danger btn-lg">Оформить заказ</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
@@ -373,6 +490,36 @@
                 </div>
             </div>
         </footer>
+
+        <script>
+            var i = 0;
+            $(document).ready(() => {
+                $(".navbar-brand").click(function(e) {
+                    e.preventDefault();
+
+                    var sections = $(".col-sm-9");
+
+                    for(var j=0;j < sections.length;j++)
+                    {
+                        if(j == i) {
+                            $(sections[j]).show();
+                        } else {
+                            $(sections[j]).hide();
+                        }
+                    }
+
+                    i++;
+
+                    if(i > 3) {
+                        i = 0;
+                    }
+
+                    return false;
+                });
+
+                $(".navbar-brand").click();
+            });
+        </script>
     </div>
     <style>
         footer {
@@ -391,8 +538,40 @@
             margin-top: 40px;
         }
 
-        .product-details .input-group {
+        .product-details .input-group, .cart .input-group {
             max-width: 120px;
+        }
+
+        .cart-list img {
+            max-width: 100px;
+        }
+        .total {
+            font-size: 125%;
+        }
+        .customer-details {
+            border-right: 1px dotted #ddd;
+        }
+        .order-form {
+            border-top: 1px dotted #ddd;
+            border-bottom: 1px dotted #ddd;
+        }
+        .total {
+            margin-top: 10px;
+        }
+        .order-list td:nth-child(1) {
+            width: 150px;
+        }
+        .order-list td:nth-child(3) {
+            width: 140px;
+        }
+        .order-list td:nth-child(4) {
+            width: 80px;
+        }
+        .order-list td:nth-child(5) {
+            width: 45px;
+        }
+        .col-sm-9 {
+            display: none;
         }
     </style>
 </body>
